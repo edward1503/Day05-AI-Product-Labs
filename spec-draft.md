@@ -11,7 +11,8 @@ Mục tiêu: Xây dựng một AI Tutor "lớp phủ" (overlay) có khả năng 
 
 | | Value | Trust | Feasibility |
 |---|-------|-------|-------------|
-| Trả lời | Sinh viên gặp khái niệm khó trong slide/video. Pain: Tốn 2-3 phút search + chuyển tab gây xao nhãng. AI: Giải thích dựa trên chính nội dung đang hiển thị (OCR slide hoặc Metadata video). | Nếu AI giải thích sai kiến thức chuyên môn hoặc ảo giác (hallucination) → Sinh viên hổng kiến thức. Cần có nút "Nguồn tham khảo" dẫn tới đoạn video/trang slide tương ứng. | Sử dụng Gemini/GPT-4o API để xử lý hình ảnh (Vision) hoặc text từ slide. Latency cần < 2s để giữ mạch học. Thách thức: Video dài cần xử lý transcript theo timestamp. |
+| 1 | Sinh viên gặp khái niệm khó trong slide/video. Pain: Tốn 2-3 phút search + chuyển tab gây xao nhãng. AI: Giải thích dựa trên chính nội dung đang hiển thị (OCR slide hoặc Metadata video). | Nếu AI giải thích sai kiến thức chuyên môn hoặc ảo giác (hallucination) → Sinh viên hổng kiến thức. Cần có nút "Nguồn tham khảo" dẫn tới đoạn video/trang slide tương ứng. | Sử dụng Gemini/GPT-4o API để xử lý hình ảnh (Vision) hoặc text từ slide. Latency cần < 2s để giữ mạch học. Thách thức: Video dài cần xử lý transcript theo timestamp. |
+| 2 | “Just-in-time learning” AI không chỉ trả lời, mà trả lời đúng thời điểm user cần nhất - Khi user hover / pause → AI proactively gợi ý: “Bạn có muốn hiểu khái niệm này không?” | Giảm friction xuống gần 0 (không cần gõ câu hỏi) “AI xuất hiện đúng lúc bạn bắt đầu không hiểu”. | Nếu không có context → AI nói: “Không tìm thấy thông tin trong slide/video hiện tại”, tránh hallucination hoàn toàn | 5|
 
 **Auto hay aug?** Augmentation — AI hỗ trợ giải thích và gợi ý mở rộng, sinh viên vẫn là người chủ động tiếp thu và đặt câu hỏi.
 
@@ -26,8 +27,7 @@ Mục tiêu: Xây dựng một AI Tutor "lớp phủ" (overlay) có khả năng 
 - Main failure mode: Video không có transcript khiến AI thiếu ngữ cảnh sâu của toàn bộ bài giảng.
 
 ## Phân công
-- A: Canvas
-- B: failure modes
-- C: User stories 4 paths
-- D: Eval metrics + ROI
-- E: Prototype research + prompt test
+- Quân: failure modes
+- Đức: User stories 4 paths
+- Phúc: Eval metrics + ROI
+- Hoàng: Prototype research + prompt test
