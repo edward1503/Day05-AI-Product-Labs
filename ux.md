@@ -349,7 +349,11 @@ graph LR
 Mỗi tương tác của sinh viên tạo ra signal → cải thiện chất lượng AI theo thời gian.
 
 ```mermaid
+<<<<<<< HEAD
 flowchart TD
+=======
+graph TD
+>>>>>>> b13e6885895578744589ae2adb4d4637b1517826
     INTERACT(["🎓 Sinh viên\ntương tác với AI"])
 
     subgraph SIGNALS ["Thu thập Learning Signals"]
